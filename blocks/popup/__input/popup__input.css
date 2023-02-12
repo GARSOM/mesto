@@ -1,7 +1,7 @@
 .popup__input {
-    Font-style: normal;
-    Font-size: 14px;
-    Line-height: 17px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
     border: none;
     border-bottom: 1px solid grey;
     width: 358px;
