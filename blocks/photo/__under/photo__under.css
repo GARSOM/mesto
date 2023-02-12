@@ -1,0 +1,5 @@
+.photo__under{
+    display: flex;
+    justify-content: space-between;
+    gap: 29px
+}

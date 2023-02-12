@@ -1,0 +1,14 @@
+.photo__like{
+    margin-right: 20px;
+    width: 22px;
+    height: 19px;
+    align-self: center;
+}
+
+.photo__like:hover{
+    opacity: 0.7;
+}
+.photo__like:active{
+    background-image: url(/images/Union.png);
+    background-repeat: no-repeat;
+}

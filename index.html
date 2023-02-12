@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="./pages/index.css">
+    <script src="./scripts/java.js" defer></script>
+    <title>Mesto</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/Vector.png" alt="Логотип">
+    </header>
+
+    <main class="content">
+        <section class="profile">
+            <img src="./images/avatar.jpg" class="profile__avatar" alt="Аватарка">
+
+            <div class="profile__info">
+
+                <p class="profile__name">Жак-Ив Кусто</p>
+                <button class="profile__button">
+                    <img class="profile__button" src="./images/Edit-Button.png" alt="Изменить">
+                </button>
+                <p class="profile__nickname">Исследователь океана</p>
+
+            </div>
+
+            <div>
+                <img src="./images/Add-Button.png" alt="Добавить">
+            </div>
+        </section>
+        <section class="photo">
+            <ul class="photo__elements">
+                <li class="photo__white"><img src="./images/dombai.png" class="photo__element" alt="Домбай">
+                    <div class="photo__under">
+                        <p class="photo__text">Домбай</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+                <li class="photo__white"><img src="./images/elbrus.png" class="photo__element" alt="Эльбрус">
+                    <div class="photo__under">
+                        <p class="photo__text">Гора Эльбрус</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+                <li class="photo__white"><img src="./images/karachkaevsk.jpg" class="photo__element"
+                        alt="Карачаево-Черкессия">
+                    <div class="photo__under">
+                        <p class="photo__text">Карачаево-Черкессия</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+                <li class="photo__white"><img src="./images/dombai.png" class="photo__element" alt="Домбай">
+                    <div class="photo__under">
+                        <p class="photo__text">Домбай</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+                <li class="photo__white"><img src="./images/elbrus.png" class="photo__element" alt="Эльбрус">
+                    <div class="photo__under">
+                        <p class="photo__text">Гора Эльбрус</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+                <li class="photo__white"><img src="./images/karachkaevsk.jpg" class="photo__element" alt="Карачаевск">
+                    <div class="photo__under">
+                        <p class="photo__text">Карачаевск</p>
+                        <img class="photo__like" src="./images/like.svg" alt="Сердечко">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__paragraph">© 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+
+        <form class="popup__container">
+            <p class="popup__text">Редактировать профиль</p>
+            <input type="text" class="popup__input popup__input-name" />
+            <input type="text" class="popup__input popup__input-job" />
+            <button class="popup__submit">
+                <img class="popup__submit" src="images/Save.png" alt="Сохранить">
+            </button>
+        </form>
+        <button class="popup__close">
+            <img class="popup__close" src="./images/Крестик.png" alt="Закрыть">
+        </button>
+    </div>
+</body>
+
+</html>

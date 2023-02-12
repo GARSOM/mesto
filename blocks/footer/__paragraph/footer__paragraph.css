@@ -1,0 +1,9 @@
+.footer__paragraph{
+    color: rgba(84, 84, 84, 1);
+}
+@media screen and (max-width: 320px) {
+    .footer__paragraph {
+        margin-left: 19px;
+        margin-right: 19px;
+    }
+}
