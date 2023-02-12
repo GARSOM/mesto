@@ -1,0 +1,25 @@
+.popup__close {
+    margin: 0;
+    padding: 0;
+    max-width: 32px;
+    max-height: 32px;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    align-self: end;
+    margin-left: 33px;
+}
+
+.popup__close:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 320px) {
+    .popup__close {
+        max-width: 20px;
+        max-height: 20px;
+        align-self: end;
+        margin-left: 20px;
+        margin-bottom: 8px;
+    }
+}

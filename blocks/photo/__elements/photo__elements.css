@@ -1,0 +1,24 @@
+.photo__elements{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    grid-template-rows: repeat(1fr, 361px);
+    grid-gap: 17px;
+    list-style: none;
+}
+@media screen and (max-width: 720px) {
+    .photo__elements {
+        margin-left: 19px;
+        margin-right: 19px;
+        grid-template-columns: repeat(2, 282px);
+        grid-template-rows: repeat(1fr, 361px);
+    }
+}
+@media screen and (max-width: 320px) {
+    .photo__elements {
+        margin-left: 19px;
+        margin-right: 19px;
+        grid-template-columns: repeat(auto-fill, 282px);
+    }
+}
