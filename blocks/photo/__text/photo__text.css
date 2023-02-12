@@ -1,8 +1,8 @@
 .photo__text {
     color: black;
     font-weight: 900;
-    Font-size: 24px;
-    Line-height: 29px;
+    font-size: 24px;
+    line-height: 29px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
