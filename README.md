@@ -13,5 +13,5 @@
 3. Видео
 4. Добавить стили для шрифтов
 
-*Ссылка на Сайт**
-Ссылка на проект: https://github.com/GARSOM/mesto.git
+*Ссылка на Сайт: https://garsom.github.io/mesto/
+*Ссылка на проект: https://github.com/GARSOM/mesto.git
