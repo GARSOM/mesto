@@ -1,0 +1,11 @@
+.profile__add {
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
+}

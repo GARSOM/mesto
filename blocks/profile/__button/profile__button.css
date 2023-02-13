@@ -4,17 +4,17 @@
     color: inherit;
     background-color: transparent;
     cursor: pointer;
-    max-height: 24px;
     align-self: center;
 }
 
 .profile__button:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
+
 @media screen and (max-width: 320px) {
     .profile__button {
         max-width: 18px;
         max-height: 18px;
         align-self: center;
     }
-  }
+}
