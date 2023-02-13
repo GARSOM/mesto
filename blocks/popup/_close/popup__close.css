@@ -8,10 +8,11 @@
     background-color: transparent;
     align-self: end;
     margin-left: 33px;
+    cursor: pointer
 }
 
 .popup__close:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 320px) {
