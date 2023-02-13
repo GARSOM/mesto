@@ -1,7 +1,7 @@
 .profile__nickname {
-    Font-style: Regular;
-    Font-size: 18px;
-    Line-height: 100%;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 100%;
     margin: 0;
     margin-top: 16px;
 }
