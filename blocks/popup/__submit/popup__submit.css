@@ -2,7 +2,7 @@
     border: none;
     background-color: transparent;
     padding: 0;
-    cursor: pointer
+    cursor: pointer;
 }
 .popup__submit:hover {
     opacity: 0.8;

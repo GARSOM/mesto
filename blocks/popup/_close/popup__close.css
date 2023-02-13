@@ -8,7 +8,7 @@
     background-color: transparent;
     align-self: end;
     margin-left: 33px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .popup__close:hover {
