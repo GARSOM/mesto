@@ -6,6 +6,13 @@
     cursor: pointer;
 }
 
+
 .profile__add:hover {
     opacity: 0.6;
+}
+
+@media screen and (max-width: 720px) {
+    .profile__add {
+        width: 80px;
+    }
 }

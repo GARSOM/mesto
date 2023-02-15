@@ -1,14 +1,12 @@
 .popup__close {
-    margin: 0;
-    padding: 0;
     max-width: 32px;
     max-height: 32px;
     border: none;
     font: inherit;
     background-color: transparent;
-    align-self: end;
-    margin-left: 33px;
     cursor: pointer;
+    margin-left: 32px;
+    margin-top: -8px;
 }
 
 .popup__close:hover {

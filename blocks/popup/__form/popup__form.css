@@ -1,17 +1,17 @@
-.popup__container {
+.popup__form {
     max-width: 430px;
+    height: 330px;
     color: black;
-    background: white;
-    border-radius: 10px 10px 10px 10px;
     display: flex;
     justify-content: center;
+    align-content: space-evenly;
     flex-wrap: wrap;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 320px) {
-    .popup__container {
+    .popup__form {
         max-width: 282px;
-        max-height: 322px;
+        max-height: 332px;
+        align-content: space-around;
     }
 }
