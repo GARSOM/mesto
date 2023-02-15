@@ -1,6 +1,12 @@
 .photo {
     max-width: 880px;
 }
+@media screen and (max-width: 720px) {
+    .photo {
+        max-width: 720px;
+    }
+}
+
 
 @media screen and (max-width: 320px) {
     .photo {

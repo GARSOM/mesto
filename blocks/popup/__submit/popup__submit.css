@@ -3,6 +3,7 @@
     background-color: transparent;
     padding: 0;
     cursor: pointer;
+    border-radius: 2px 2px 2px 2px;
 }
 .popup__submit:hover {
     opacity: 0.8;
@@ -10,6 +11,7 @@
 @media screen and (max-width: 320px) {
     .popup__submit {
         max-width: 238px;
+        height: 46px;
         object-fit: cover;
     }
   }

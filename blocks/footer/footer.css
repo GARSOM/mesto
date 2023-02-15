@@ -3,3 +3,14 @@
     margin-bottom: 60px;
     width: 318px;
 }
+@media screen and (max-width: 720px) {
+    .footer{
+        margin-left: 19px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .footer {
+        margin-top: 48px;
+        margin-bottom: 36px;
+    }
+}

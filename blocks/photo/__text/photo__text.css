@@ -1,4 +1,5 @@
 .photo__text {
+    margin: 0;
     color: black;
     font-weight: 900;
     font-size: 24px;
@@ -6,5 +7,5 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    margin-left: 21px;
+    margin: 25px 15px 31px 21px;
 }

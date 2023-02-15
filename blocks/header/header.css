@@ -1,14 +1,26 @@
-.header{
+.header {
     display: flex;
     max-width: 880px;
     margin-top: 45px;
-    height: 74px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(84, 84, 84);
 }
+
+@media screen and (max-width: 720px) {
+    .header {
+        margin-left: 19px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .profile {
+        max-width: 600px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .header {
+        margin-left: 0px;
         margin-top: 28px;
         margin-bottom: 0px;
-        max-height: 56px;
     }
-  }
+}

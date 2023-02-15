@@ -4,12 +4,12 @@
     line-height: 100%;
     margin: 0;
     padding: 0;
-    margin-left: -45px;
+    margin-right: 50px;
 }
 
 @media screen and (max-width: 320px) {
     .popup__text {
-        margin: 0;
+        margin-right: 0;
         font-size: 18px;
         line-height: 22px;
     }

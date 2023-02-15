@@ -12,6 +12,5 @@
 
 .photo__like:active {
     opacity: unset;
-    background-image: url(../../../images/Union.png);
-    background-repeat: no-repeat;
+    background-image: url(../../../images/like_active.svg);
 }

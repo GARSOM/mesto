@@ -4,9 +4,14 @@
     max-width: 142px;
     max-height: 33px;
     object-fit: none;
+    margin-bottom: 41px;
 }
 @media screen and (max-width: 320px) {
     .header__logo {
+        max-width: 103.74px;
+        max-height: 24.4px;
+        object-fit: contain;
+        margin-bottom: 31.6px;
         margin-left: 27px;
     }
   }
