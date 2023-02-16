@@ -1,9 +1,10 @@
 .photo {
     max-width: 880px;
 }
+
 @media screen and (max-width: 720px) {
     .photo {
-        max-width: 720px;
+        max-width: 320px;
     }
 }
 

@@ -3,19 +3,32 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 282px);
-    grid-gap: 17px;
+    grid-template-rows: repeat(2, 361px);
+    grid-row-gap: 20px;
+    grid-column-gap: 17px;
     list-style: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .photo__elements {
         grid-template-columns: repeat(2, 282px);
+        grid-template-rows: repeat(2, 361px);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .photo__elements {
+        grid-template-columns: 282px;
+        grid-template-rows: repeat(6, 361px);
+        margin-left: 19px;
+        margin-right: 19px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .photo__elements {
-        grid-template-columns: repeat(1, 282px);
+        grid-template-columns: 282px;
+        grid-template-rows: repeat(6, 361px);
         margin-left: 19px;
         margin-right: 19px;
     }

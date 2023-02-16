@@ -10,7 +10,7 @@ let profileDisc = document.querySelector('.profile__nickname');
 
 function handleFormSubmit(evt) {// обработчик формы
    evt.preventDefault();
-   
+
    profileHead.textContent = nameInput.value;
    profileDisc.textContent = jobInput.value;
    closePopup();

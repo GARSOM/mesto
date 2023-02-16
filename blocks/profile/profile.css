@@ -5,17 +5,25 @@
   margin-bottom: 50px;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+  .profile {
+    max-width: 620px;
+  }
+}
+
+@media screen and (max-width: 720px) {
   .profile {
     max-width: 320px;
-    margin-top: 42px;
-    margin-bottom: 36px;
     flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .profile {}
+  .profile {
+    margin-bottom: 36px;
+  }
 }

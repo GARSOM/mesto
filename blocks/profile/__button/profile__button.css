@@ -5,6 +5,11 @@
     background-color: transparent;
     cursor: pointer;
     align-self: center;
+    margin-left: 18px;
+    background-image: url(../../../images/EditButton.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
 }
 
 .profile__button:hover {
@@ -13,6 +18,7 @@
 
 @media screen and (max-width: 320px) {
     .profile__button {
+        margin: 0;
         max-width: 18px;
         max-height: 18px;
     }

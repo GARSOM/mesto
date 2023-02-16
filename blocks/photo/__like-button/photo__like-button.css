@@ -1,4 +1,5 @@
 .photo__like-button {
+    padding: 0;
     border: none;
     color: inherit;
     background-color: transparent;

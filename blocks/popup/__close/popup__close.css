@@ -6,7 +6,7 @@
     background-color: transparent;
     cursor: pointer;
     margin-left: 32px;
-    margin-top: -8px;
+    margin-bottom: 8px;
 }
 
 .popup__close:hover {

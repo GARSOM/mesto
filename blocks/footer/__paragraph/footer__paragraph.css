@@ -2,6 +2,16 @@
     color: rgba(84, 84, 84, 1);
     margin: 0;
     padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer__paragraph {
+        margin-left: 19px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 320px) {

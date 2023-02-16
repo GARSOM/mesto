@@ -4,7 +4,6 @@
     background: white;
     border-radius: 10px 10px 10px 10px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -12,6 +11,5 @@
 @media screen and (max-width: 320px) {
     .popup__container {
         max-width: 282px;
-        max-height: 322px;
     }
 }
