@@ -14,10 +14,9 @@
 
 @media screen and (max-width: 1024px) {
     .page {
-        max-width: 720px;
+        max-width: 590px;
     }
 }
-
 
 @media screen and (max-width: 720px) {
     .page {

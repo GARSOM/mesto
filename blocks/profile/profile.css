@@ -8,12 +8,6 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 1024px) {
-  .profile {
-    max-width: 620px;
-  }
-}
-
 @media screen and (max-width: 720px) {
   .profile {
     max-width: 320px;

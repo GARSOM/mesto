@@ -26,10 +26,5 @@
 }
 
 @media screen and (max-width: 320px) {
-    .photo__elements {
-        grid-template-columns: 282px;
-        grid-template-rows: repeat(6, 361px);
-        margin-left: 19px;
-        margin-right: 19px;
-    }
+    .photo__elements {}
 }

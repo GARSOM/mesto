@@ -5,9 +5,9 @@
     white-space: nowrap;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
     .profile__info {
-        margin: 26px 19px 12px 32px;
+        margin: 26px 19px 12px 46px;
         grid-row-gap: 8px;
     }
 }
