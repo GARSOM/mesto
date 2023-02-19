@@ -3,10 +3,10 @@
     font-size: 24px;
     line-height: 100%;
     padding: 0;
-    margin: 34px 0 54px 0;
+    margin: 36px 0 52px 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
     .popup__text {
         margin: 20px 0 75px 0;
         font-size: 18px;

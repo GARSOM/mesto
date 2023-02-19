@@ -2,12 +2,11 @@
     max-width: 430px;
     color: black;
     display: flex;
-    align-content: space-evenly;
     flex-wrap: wrap;
     padding-left: 36px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
     .popup__form {
         max-width: 282px;
         padding-left: 22px;

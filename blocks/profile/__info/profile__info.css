@@ -1,13 +1,21 @@
 .profile__info {
     margin: 0 auto 0 30px;
     display: grid;
-    grid-template-columns: auto min-content;
+    grid-template-columns: 294px auto;
     white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__info {
+        grid-template-columns: auto min-content;
+        margin: 26px 19px 12px 10px;
+        grid-row-gap: 8px;
+    }
 }
 
 @media screen and (max-width: 720px) {
     .profile__info {
-        margin: 26px 19px 12px 46px;
+        margin-left: 46px;
         grid-row-gap: 8px;
     }
 }
