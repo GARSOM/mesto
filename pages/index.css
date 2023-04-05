@@ -28,3 +28,9 @@
 @import url(../blocks/profile/__add/profile__add.css);
 @import url(../blocks/photo/__like-button/photo__like-button.css);
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/photo/__like-active/photo__like-active.css);
+@import url(../blocks/photo/__basket/photo__basket.css);
+@import url(../blocks/popup/__full/popup__full.css);
+@import url(../blocks/popup/__full-container/popup__full-container.css);
+@import url(../blocks/popup/__full-img/popup__full-img.css);
+@import url(../blocks/popup/__full-caption/popup__full-caption.css);

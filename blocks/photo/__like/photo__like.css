@@ -1,12 +1,8 @@
 .photo__like {
     cursor: pointer;
+    display: none;
 }
 
 .photo__like:hover {
     opacity: 0.5;
-}
-
-.photo__like:active {
-    opacity: unset;
-    background-image: url(../../../images/like_active.svg);
 }

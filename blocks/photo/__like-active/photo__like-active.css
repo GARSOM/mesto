@@ -1,15 +1,12 @@
-.photo__like-button {
+.photo__like-active {
     border: none;
     color: inherit;
     background-color: transparent;
     cursor: pointer;
     align-self: center;
-    background-image: url(../../../images/like.svg);
     width: 24px;
     height: 24px;
     background-repeat: no-repeat;
     cursor: pointer;
-}
-.photo__like-button:hover {
-    opacity: 0.5;
+    background-image: url(../../../images/like_active.svg);
 }
