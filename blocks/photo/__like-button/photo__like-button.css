@@ -8,7 +8,6 @@
     width: 24px;
     height: 24px;
     background-repeat: no-repeat;
-    cursor: pointer;
 }
 .photo__like-button:hover {
     opacity: 0.5;
