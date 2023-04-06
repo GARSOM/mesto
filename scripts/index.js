@@ -41,10 +41,10 @@ const addWhite = (addWhiteData) => {
    deleteButton.addEventListener('click', handeleDelete);
    likeButton.addEventListener('click', handeleLike);
 
-   const popupFull = document.querySelector('.popup_full');
-   const elementFullImg = document.querySelector('.popup_full-img');
-   const elementFullCaption = document.querySelector('.popup_full-caption');
-   const popupFullClose = document.querySelector('.popup_full-close');
+   const popupFull = document.querySelector('.full');
+   const elementFullImg = document.querySelector('.full__img');
+   const elementFullCaption = document.querySelector('.full__caption');
+   const popupFullClose = document.querySelector('.full__close');
 
    const addFullContent = (evt) => {
       const elementImg = evt.target.closest('.photo__element');
