@@ -42,9 +42,9 @@ const addWhite = (addWhiteData) => {
    likeButton.addEventListener('click', handeleLike);
 
    const popupFull = document.querySelector('.popup_full');
-   const elementFullImg = document.querySelector('.popup_full_img');
-   const elementFullCaption = document.querySelector('.popup_full_caption');
-   const popupFullClose = document.querySelector('.popup_full_close');
+   const elementFullImg = document.querySelector('.popup_full-img');
+   const elementFullCaption = document.querySelector('.popup_full-caption');
+   const popupFullClose = document.querySelector('.popup_full-close');
 
    const addFullContent = (evt) => {
       const elementImg = evt.target.closest('.photo__element');
