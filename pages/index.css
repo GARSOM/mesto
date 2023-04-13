@@ -30,7 +30,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/photo/__like-active/photo__like-active.css);
 @import url(../blocks/photo/__basket/photo__basket.css);
-@import url(../blocks/popup/_type_show-image/popup_type_show-image.css);
-@import url(../blocks/popup/_type_container/popup_type_container.css);
-@import url(../blocks/popup/_type_img/popup_type_img.css);
-@import url(../blocks/popup/_type_caption/popup_type_caption.css);
+@import url(../blocks/popup/_type/popup_type_caption.css);
+@import url(../blocks/popup/_type/popup_type_container.css);
+@import url(../blocks/popup/_type/popup_type_img.css);
+@import url(../blocks/popup/_type/popup_type_show-image.css);
