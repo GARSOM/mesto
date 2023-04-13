@@ -1,30 +1,28 @@
 const photoTemplate = document.getElementById('white-template'); // находим наш template и заносим в DOM
 const blockContainer = document.querySelector('.photo__elements');
-const buttonOpenPopupName = document.querySelector('.profile__button');
-const popupName = document.querySelector('.popup_profile');
-const closePopupButton = document.querySelector('.popup__close_profile')
-const nameInput = document.querySelector('.popup__input-name');
-const jobInput = document.querySelector('.popup__input-job');
-const profileForm = document.querySelector('.popup__form_profile');
+const editProfileButtonOpenPopup = document.querySelector('.profile__button');
+const editProfilePopup = document.querySelector('.popup_profile');
+const editProfileCloseButton = editProfilePopup.querySelector('.popup__close_profile');
+const editProfileNameInput = document.querySelector('.popup__input-name');
+const editProfilejobInput = document.querySelector('.popup__input-job');
+const editProfilePopupForm = document.querySelector('.popup__form_profile');
 const profileName = document.querySelector('.profile__name');
 const profileNick = document.querySelector('.profile__nickname');
-const buttonAdd = document.querySelector('.profile__add');
-const popupPlace = document.querySelector('.popup_second');
-const popupClosePlace = document.querySelector('.popup__close-second');
-const editPhotoForm = document.querySelector('.popup__form_place');
-
+const addPlaceButtonOpenPopup = document.querySelector('.profile__add');
+const addPlacePopup = document.querySelector('.popup_add-place');
+const addPlaceCloseButton = addPlacePopup.querySelector('.popup__close-add-place');
+const addPlacePopupForm = document.querySelector('.popup__form_place');
+const itemTemplate = photoTemplate.content.querySelector('.photo__white');
 // функция которая на основе данных будет создавать элемент
 const addWhite = (addWhiteData) => {
    //создание копии template
-   const whiteElement = photoTemplate.content
-      .querySelector('.photo__white')
-      .cloneNode(true);
-
+   const whiteElement = itemTemplate.cloneNode(true);
    const photoText = whiteElement.querySelector('.photo__text')
    const photoElement = whiteElement.querySelector('.photo__element')
 
    photoText.textContent = addWhiteData.name
    photoElement.src = addWhiteData.link
+   photoElement.alt = addWhiteData.name
 
    const deleteButton = whiteElement.querySelector('.photo__basket');
    const likeButton = whiteElement.querySelector('.photo__like-button');
@@ -41,20 +39,21 @@ const addWhite = (addWhiteData) => {
    deleteButton.addEventListener('click', handeleDelete);
    likeButton.addEventListener('click', handeleLike);
 
-   const popupFull = document.querySelector('.full');
-   const elementFullImg = document.querySelector('.full__img');
-   const elementFullCaption = document.querySelector('.full__caption');
-   const popupFullClose = document.querySelector('.full__close');
+   const showImagePopup = document.querySelector('.popup_type_show-image');
+   const showImageImg = showImagePopup.querySelector('.popup_type_img');
+   const showImageCaption = showImagePopup.querySelector('.popup_type_caption');
+   const showImageClose = showImagePopup.querySelector('.popup_type_close');
 
-   const addFullContent = (evt) => {
+   const showPopupWithImage = (evt) => {
       const elementImg = evt.target.closest('.photo__element');
-      openPopup(popupFull);
-      elementFullImg.src = elementImg.src;
-      elementFullCaption.textContent = photoText.textContent;
+      openPopup(showImagePopup);
+      showImageImg.src = elementImg.src;
+      showImageCaption.textContent = photoText.textContent;
+      showImageImg.alt = addWhiteData.name;
    }
-   photoElement.addEventListener('click', addFullContent);
-   popupFullClose.addEventListener('click', () => {
-      closePopup(popupFull);
+   photoElement.addEventListener('click', showPopupWithImage);
+   showImageClose.addEventListener('click', () => {
+      closePopup(showImagePopup);
    });
 
    return whiteElement; //возвращаем элемент
@@ -62,7 +61,7 @@ const addWhite = (addWhiteData) => {
 
 // добавление карточки с помощью Prepend, чтобы добавлять в начало
 const renderAddWhite = (whiteElement) => {
-   blockContainer.prepend(whiteElement)
+   blockContainer.append(whiteElement)
 };
 // перебираем массив
 initialCards.forEach((photoWhite) => {
@@ -75,8 +74,10 @@ const openPopup = (popup) => {
    popup.classList.add('popup_opened')
 }
 // слушатель открытия popup
-buttonOpenPopupName.addEventListener('click', () => {
-   openPopup(popupName);
+editProfileButtonOpenPopup.addEventListener('click', () => {
+   editProfileNameInput.value = profileName.textContent
+   editProfilejobInput.value = profileNick.textContent
+   openPopup(editProfilePopup);
 });
 
 // функция закрытия popup
@@ -84,38 +85,42 @@ const closePopup = (popup) => {
    popup.classList.remove('popup_opened')
 }
 // слушатель закрытия popup
-closePopupButton.addEventListener('click', () => {
-   closePopup(popupName);
+editProfileCloseButton.addEventListener('click', () => {
+   closePopup(editProfilePopup);
 });
 
 // вешаем слушатель и Связываем input редактирования профиля со строками, чтобы информация со строк сохранялась имя и о себе
 
-profileForm.addEventListener('submit', (evt) => {
+editProfilePopupForm.addEventListener('submit', (evt) => {
    evt.preventDefault();
-   profileName.textContent = nameInput.value;
-   profileNick.textContent = jobInput.value;
-   closePopup(popupName);
+   profileName.textContent = editProfileNameInput.value;
+   profileNick.textContent = editProfilejobInput.value;
+   closePopup(editProfilePopup);
 })
 // слушатель открытия popup 2
-buttonAdd.addEventListener('click', () => {
-   openPopup(popupPlace);
+addPlaceButtonOpenPopup.addEventListener('click', () => {
+   openPopup(addPlacePopup);
 });
 // слушатель закрытия popup2
-popupClosePlace.addEventListener('click', () => {
-   closePopup(popupPlace);
+addPlaceCloseButton.addEventListener('click', () => {
+   closePopup(addPlacePopup);
 });
+
 // Связываем input загрузки фото со строками, чтобы информация со строк сохранялась Название и ссылка
 const handlePhotoSubmit = (evt) => {
    evt.preventDefault();
-   const nameInput = editPhotoForm.querySelector('.popup__input_place-name');
-   const linkInput = editPhotoForm.querySelector('.popup__input_place-link');
-   const name = nameInput.value;
-   const link = linkInput.value;
+   const nameInputPlace = addPlacePopupForm.querySelector('.popup__input_place-name');
+   const linkInputPlace = addPlacePopupForm.querySelector('.popup__input_place-link');
+   const name = nameInputPlace.value;
+   const link = linkInputPlace.value;
+
    const addWhiteData = {
       name,
       link,
    };
-   renderAddWhite(addWhite(addWhiteData));
-   closePopup(popupPlace);
+
+   addPlacePopupForm.reset();
+   blockContainer.prepend(addWhite(addWhiteData));
+   closePopup(addPlacePopup);
 };
-editPhotoForm.addEventListener('submit', handlePhotoSubmit)
+addPlacePopupForm.addEventListener('submit', handlePhotoSubmit);
