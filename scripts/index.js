@@ -40,9 +40,9 @@ const addWhite = (addWhiteData) => {
    likeButton.addEventListener('click', handeleLike);
 
    const showImagePopup = document.querySelector('.popup_type_show-image');
-   const showImageImg = showImagePopup.querySelector('.popup_type_img');
-   const showImageCaption = showImagePopup.querySelector('.popup_type_caption');
-   const showImageClose = showImagePopup.querySelector('.popup_type_close');
+   const showImageImg = showImagePopup.querySelector('.popup__img');
+   const showImageCaption = showImagePopup.querySelector('.popup__caption');
+   const showImageClose = document.getElementById('popup__close_show-image');
 
    const showPopupWithImage = (evt) => {
       const elementImg = evt.target.closest('.photo__element');
