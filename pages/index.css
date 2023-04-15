@@ -31,6 +31,6 @@
 @import url(../blocks/photo/__like-active/photo__like-active.css);
 @import url(../blocks/photo/__basket/photo__basket.css);
 @import url(../blocks/popup/__caption/popup__caption.css);
-@import url(../blocks/popup/__container/_type_show-image/popup__container_type_show-image.css);
+@import url(../blocks/popup/__contain-show-image/popup__contain-show-image.css);
 @import url(../blocks/popup/__img/popup__img.css);
 @import url(../blocks/popup/_type/popup_type_show-image.css);
