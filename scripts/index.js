@@ -13,6 +13,7 @@ const addPlacePopup = document.querySelector('.popup_add-place');
 const addPlaceCloseButton = addPlacePopup.querySelector('.popup__close-add-place');
 const addPlacePopupForm = document.querySelector('.popup__form_place');
 const itemTemplate = photoTemplate.content.querySelector('.photo__white');
+
 // функция которая на основе данных будет создавать элемент
 const addWhite = (addWhiteData) => {
    //создание копии template
@@ -52,6 +53,7 @@ const addWhite = (addWhiteData) => {
       showImageImg.alt = addWhiteData.name;
    }
    photoElement.addEventListener('click', showPopupWithImage);
+   showImagePopup.addEventListener('mousedown', handleOverlayClick);
    showImageClose.addEventListener('click', () => {
       closePopup(showImagePopup);
    });
@@ -102,8 +104,11 @@ addPlaceButtonOpenPopup.addEventListener('click', () => {
    openPopup(addPlacePopup);
 });
 // слушатель закрытия popup2
+
 addPlaceCloseButton.addEventListener('click', () => {
    closePopup(addPlacePopup);
+
+
 });
 
 // Связываем input загрузки фото со строками, чтобы информация со строк сохранялась Название и ссылка
@@ -124,3 +129,19 @@ const handlePhotoSubmit = (evt) => {
    closePopup(addPlacePopup);
 };
 addPlacePopupForm.addEventListener('submit', handlePhotoSubmit);
+
+function handleEscape(evt) {
+   if (evt.key === 'Escape') {
+      closePopup(document.querySelector('.popup_opened'));
+   }
+};
+
+function handleOverlayClick(evt) {
+   if (evt.target.classList.contains('popup')) {
+      closePopup(evt.target);
+   }
+};
+document.addEventListener('keydown', handleEscape);
+
+editProfilePopup.addEventListener('mousedown', handleOverlayClick);
+addPlacePopup.addEventListener('mousedown', handleOverlayClick);
