@@ -16,7 +16,6 @@ const itemTemplate = photoTemplate.content.querySelector('.photo__white');
 const imageShowPopup = document.querySelector('.popup_type_show-image');
 const imageShowImg = imageShowPopup.querySelector('.popup__img');
 const imageShowCaption = imageShowPopup.querySelector('.popup__caption');
-const imageShowClose = document.getElementById('popup__close_show-image');
 const nameInputPlace = placeAddPopupForm.querySelector('.popup__input_place-name');
 const linkInputPlace = placeAddPopupForm.querySelector('.popup__input_place-link');
 
@@ -53,11 +52,6 @@ const addWhite = (addWhiteData) => {
       openPopup(imageShowPopup);
    }
    photoElement.addEventListener('click', showPopupWithImage);
-
-   imageShowClose.addEventListener('click', () => {
-      closePopup(imageShowPopup);
-   });
-
    return whiteElement; //возвращаем элемент
 };
 
@@ -106,10 +100,11 @@ placeAddButtonOpenPopup.addEventListener('click', () => {
    openPopup(placeAddPopup);
 });
 // слушатель закрытия popup2
-
-placeAddCloseButton.addEventListener('click', () => {
-   closePopup(placeAddPopup);
+document.querySelectorAll('.popup__close').forEach(button => {
+   const buttonsPopup = button.closest('.popup'); // нашли родителя с нужным классом
+   button.addEventListener('click', () => closePopup(buttonsPopup)); // закрыли попап
 });
+
 
 // Связываем input загрузки фото со строками, чтобы информация со строк сохранялась Название и ссылка
 const handlePhotoSubmit = (evt) => {
