@@ -2,7 +2,6 @@ const photoTemplate = document.getElementById('white-template'); // находи
 const blockContainer = document.querySelector('.photo__elements');
 const profileEditButtonOpenPopup = document.querySelector('.profile__button');
 const profileEditPopup = document.querySelector('.popup_profile');
-const profileEditCloseButton = profileEditPopup.querySelector('.popup__close_profile');
 const profileEditNameInput = document.querySelector('.popup__input-name');
 const profileEditjobInput = document.querySelector('.popup__input-job');
 const profileEditPopupForm = document.querySelector('.popup__form_profile');
@@ -10,7 +9,6 @@ const profileName = document.querySelector('.profile__name');
 const profileNick = document.querySelector('.profile__nickname');
 const placeAddButtonOpenPopup = document.querySelector('.profile__add');
 const placeAddPopup = document.querySelector('.popup_add-place');
-const placeAddCloseButton = placeAddPopup.querySelector('.popup__close-add-place');
 const placeAddPopupForm = document.querySelector('.popup__form_place');
 const itemTemplate = photoTemplate.content.querySelector('.photo__white');
 const imageShowPopup = document.querySelector('.popup_type_show-image');
@@ -82,10 +80,7 @@ const closePopup = (popup) => {
    popup.classList.remove('popup_opened');
    document.removeEventListener('keydown', closeByEsc)
 }
-// слушатель закрытия popup
-profileEditCloseButton.addEventListener('click', () => {
-   closePopup(profileEditPopup);
-});
+
 
 // вешаем слушатель и Связываем input редактирования профиля со строками, чтобы информация со строк сохранялась имя и о себе
 
