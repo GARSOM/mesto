@@ -8,8 +8,7 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
 }
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 720px) {
     .popup__container {
         max-width: 282px;
     }

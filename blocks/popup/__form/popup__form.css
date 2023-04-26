@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     padding-left: 36px;
 }
-
 @media screen and (max-width: 720px) {
     .popup__form {
         max-width: 282px;

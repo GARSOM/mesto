@@ -1,18 +1,24 @@
 const photoTemplate = document.getElementById('white-template'); // находим наш template и заносим в DOM
 const blockContainer = document.querySelector('.photo__elements');
-const editProfileButtonOpenPopup = document.querySelector('.profile__button');
-const editProfilePopup = document.querySelector('.popup_profile');
-const editProfileCloseButton = editProfilePopup.querySelector('.popup__close_profile');
-const editProfileNameInput = document.querySelector('.popup__input-name');
-const editProfilejobInput = document.querySelector('.popup__input-job');
-const editProfilePopupForm = document.querySelector('.popup__form_profile');
+const profileEditButtonOpenPopup = document.querySelector('.profile__button');
+const profileEditPopup = document.querySelector('.popup_profile');
+const profileEditCloseButton = profileEditPopup.querySelector('.popup__close_profile');
+const profileEditNameInput = document.querySelector('.popup__input-name');
+const profileEditjobInput = document.querySelector('.popup__input-job');
+const profileEditPopupForm = document.querySelector('.popup__form_profile');
 const profileName = document.querySelector('.profile__name');
 const profileNick = document.querySelector('.profile__nickname');
-const addPlaceButtonOpenPopup = document.querySelector('.profile__add');
-const addPlacePopup = document.querySelector('.popup_add-place');
-const addPlaceCloseButton = addPlacePopup.querySelector('.popup__close-add-place');
-const addPlacePopupForm = document.querySelector('.popup__form_place');
+const placeAddButtonOpenPopup = document.querySelector('.profile__add');
+const placeAddPopup = document.querySelector('.popup_add-place');
+const placeAddCloseButton = placeAddPopup.querySelector('.popup__close-add-place');
+const placeAddPopupForm = document.querySelector('.popup__form_place');
 const itemTemplate = photoTemplate.content.querySelector('.photo__white');
+const imageShowPopup = document.querySelector('.popup_type_show-image');
+const imageShowImg = imageShowPopup.querySelector('.popup__img');
+const imageShowCaption = imageShowPopup.querySelector('.popup__caption');
+const imageShowClose = document.getElementById('popup__close_show-image');
+const nameInputPlace = placeAddPopupForm.querySelector('.popup__input_place-name');
+const linkInputPlace = placeAddPopupForm.querySelector('.popup__input_place-link');
 
 // функция которая на основе данных будет создавать элемент
 const addWhite = (addWhiteData) => {
@@ -25,8 +31,8 @@ const addWhite = (addWhiteData) => {
    photoElement.src = addWhiteData.link
    photoElement.alt = addWhiteData.name
 
-   const deleteButton = whiteElement.querySelector('.photo__basket');
-   const likeButton = whiteElement.querySelector('.photo__like-button');
+   const buttonDelete = whiteElement.querySelector('.photo__basket');
+   const buttonLike = whiteElement.querySelector('.photo__like-button');
 
    // удаление карточки
    const handeleDelete = () => {
@@ -34,28 +40,22 @@ const addWhite = (addWhiteData) => {
    }
    // переключатель лайка
    const handeleLike = () => {
-      likeButton.classList.toggle('photo__like-active')
+      buttonLike.classList.toggle('photo__like-active')
    }
    // слушатели по клику для корзины и лайка 
-   deleteButton.addEventListener('click', handeleDelete);
-   likeButton.addEventListener('click', handeleLike);
+   buttonDelete.addEventListener('click', handeleDelete);
+   buttonLike.addEventListener('click', handeleLike);
 
-   const showImagePopup = document.querySelector('.popup_type_show-image');
-   const showImageImg = showImagePopup.querySelector('.popup__img');
-   const showImageCaption = showImagePopup.querySelector('.popup__caption');
-   const showImageClose = document.getElementById('popup__close_show-image');
-
-   const showPopupWithImage = (evt) => {
-      const elementImg = evt.target.closest('.photo__element');
-      openPopup(showImagePopup);
-      showImageImg.src = elementImg.src;
-      showImageCaption.textContent = photoText.textContent;
-      showImageImg.alt = addWhiteData.name;
+   const showPopupWithImage = () => {
+      imageShowCaption.textContent = addWhiteData.name
+      imageShowImg.src = addWhiteData.link;
+      imageShowImg.alt = addWhiteData.name;
+      openPopup(imageShowPopup);
    }
    photoElement.addEventListener('click', showPopupWithImage);
-   showImagePopup.addEventListener('mousedown', handleOverlayClick);
-   showImageClose.addEventListener('click', () => {
-      closePopup(showImagePopup);
+
+   imageShowClose.addEventListener('click', () => {
+      closePopup(imageShowPopup);
    });
 
    return whiteElement; //возвращаем элемент
@@ -74,48 +74,46 @@ initialCards.forEach((photoWhite) => {
 // функция открытия popup
 const openPopup = (popup) => {
    popup.classList.add('popup_opened')
+   document.addEventListener('keydown', closeByEsc)
 }
 // слушатель открытия popup
-editProfileButtonOpenPopup.addEventListener('click', () => {
-   editProfileNameInput.value = profileName.textContent
-   editProfilejobInput.value = profileNick.textContent
-   openPopup(editProfilePopup);
+profileEditButtonOpenPopup.addEventListener('click', () => {
+   profileEditNameInput.value = profileName.textContent
+   profileEditjobInput.value = profileNick.textContent
+   openPopup(profileEditPopup);
 });
 
 // функция закрытия popup
 const closePopup = (popup) => {
-   popup.classList.remove('popup_opened')
+   popup.classList.remove('popup_opened');
+   document.removeEventListener('keydown', closeByEsc)
 }
 // слушатель закрытия popup
-editProfileCloseButton.addEventListener('click', () => {
-   closePopup(editProfilePopup);
+profileEditCloseButton.addEventListener('click', () => {
+   closePopup(profileEditPopup);
 });
 
 // вешаем слушатель и Связываем input редактирования профиля со строками, чтобы информация со строк сохранялась имя и о себе
 
-editProfilePopupForm.addEventListener('submit', (evt) => {
+profileEditPopupForm.addEventListener('submit', (evt) => {
    evt.preventDefault();
-   profileName.textContent = editProfileNameInput.value;
-   profileNick.textContent = editProfilejobInput.value;
-   closePopup(editProfilePopup);
+   profileName.textContent = profileEditNameInput.value;
+   profileNick.textContent = profileEditjobInput.value;
+   closePopup(profileEditPopup);
 })
 // слушатель открытия popup 2
-addPlaceButtonOpenPopup.addEventListener('click', () => {
-   openPopup(addPlacePopup);
+placeAddButtonOpenPopup.addEventListener('click', () => {
+   openPopup(placeAddPopup);
 });
 // слушатель закрытия popup2
 
-addPlaceCloseButton.addEventListener('click', () => {
-   closePopup(addPlacePopup);
-
-
+placeAddCloseButton.addEventListener('click', () => {
+   closePopup(placeAddPopup);
 });
 
 // Связываем input загрузки фото со строками, чтобы информация со строк сохранялась Название и ссылка
 const handlePhotoSubmit = (evt) => {
    evt.preventDefault();
-   const nameInputPlace = addPlacePopupForm.querySelector('.popup__input_place-name');
-   const linkInputPlace = addPlacePopupForm.querySelector('.popup__input_place-link');
    const name = nameInputPlace.value;
    const link = linkInputPlace.value;
 
@@ -124,24 +122,28 @@ const handlePhotoSubmit = (evt) => {
       link,
    };
 
-   addPlacePopupForm.reset();
+   placeAddPopupForm.reset();
+   evt.submitter.classList.add('popup__submit_disabled')
+   evt.submitter.disabled = true;
    blockContainer.prepend(addWhite(addWhiteData));
-   closePopup(addPlacePopup);
+   closePopup(placeAddPopup);
 };
-addPlacePopupForm.addEventListener('submit', handlePhotoSubmit);
 
-function handleEscape(evt) {
-   if (evt.key === 'Escape') {
-      closePopup(document.querySelector('.popup_opened'));
-   }
-};
+placeAddPopupForm.addEventListener('submit', handlePhotoSubmit);
 
 function handleOverlayClick(evt) {
    if (evt.target.classList.contains('popup')) {
       closePopup(evt.target);
    }
 };
-document.addEventListener('keydown', handleEscape);
 
-editProfilePopup.addEventListener('mousedown', handleOverlayClick);
-addPlacePopup.addEventListener('mousedown', handleOverlayClick);
+
+function closeByEsc(evt) {
+   if (evt.key === 'Escape') {
+      const openedPopup = document.querySelector('.popup_opened');
+      closePopup(openedPopup);
+   }
+}
+profileEditPopup.addEventListener('mousedown', handleOverlayClick);
+placeAddPopup.addEventListener('mousedown', handleOverlayClick);
+imageShowPopup.addEventListener('mousedown', handleOverlayClick);
