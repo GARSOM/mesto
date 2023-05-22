@@ -1,5 +1,6 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js"
+import initialCards from './cards.js'
 
 const blockContainer = document.querySelector('.photo__elements');
 const profileEditButtonOpenPopup = document.querySelector('.profile__button');
@@ -52,13 +53,12 @@ placeAddButtonOpenPopup.addEventListener('click', () => {
    openPopup(placeAddPopup);
 });
 
-
 document.querySelectorAll('.popup__close').forEach(button => {
    const buttonsPopup = button.closest('.popup'); // нашли родителя с нужным классом
    button.addEventListener('click', () => closePopup(buttonsPopup)); // закрыли попап
 });
 
-// Связываем input загрузки фото со строками, чтобы информация со строк сохранялась Название и ссылка
+// Связываем input загрузки фото со строками,  чтобы информация со строк сохранялась Название и ссылка
 const handlePhotoSubmit = (evt) => {
    evt.preventDefault();
    const addWhiteData = {
@@ -66,8 +66,6 @@ const handlePhotoSubmit = (evt) => {
       link: linkInputPlace.value
    };
    placeAddPopupForm.reset();
-   evt.submitter.classList.add('popup__submit_disabled')
-   evt.submitter.disabled = true;
    blockContainer.prepend(createCard(addWhiteData));
    closePopup(placeAddPopup);
 };

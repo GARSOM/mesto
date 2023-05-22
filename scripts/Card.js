@@ -2,9 +2,6 @@ class Card {
     constructor(data, templateSelector) {
         this._data = data;
         this._templateSelector = templateSelector;
-        this._imageShowPopup = document.querySelector('.popup_type_show-image');
-        this._imageShowImg = this._imageShowPopup.querySelector('.popup__img');
-        this._imageShowCaption = this._imageShowPopup.querySelector('.popup__caption');
     }
     _getCardTemplate() {
         const cardElement = document
