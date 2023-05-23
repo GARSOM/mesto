@@ -37,12 +37,12 @@ class Card {
     }
 
     _showPopupWithImage = () => {
-        openPopup(this._imageShowPopup);
-        this._imageShowImg.src = this._elementCard.src;
-        this._imageShowImg.alt = this._elementCard.alt;
-        this._imageShowCaption.textContent = this._elementCard.alt;
+        openPopup(imageShowPopup);
+        imageShowImg.src = this._elementCard.src;
+        imageShowImg.alt = this._elementCard.alt;
+        imageShowCaption.textContent = this._elementCard.alt;
     }
 }
 
 export default Card;
-import { openPopup } from "./index.js";
+import { openPopup, imageShowPopup, imageShowCaption, imageShowImg } from "./index.js";

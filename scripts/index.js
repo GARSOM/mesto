@@ -15,7 +15,9 @@ const placeAddPopup = document.querySelector('.popup_add-place');
 const placeAddPopupForm = document.querySelector('.popup__form_place');
 const nameInputPlace = placeAddPopupForm.querySelector('.popup__input_place-name');
 const linkInputPlace = placeAddPopupForm.querySelector('.popup__input_place-link');
-const imageShowPopup = document.querySelector('.popup_type_show-image');
+export const imageShowPopup = document.querySelector('.popup_type_show-image');
+export const imageShowImg = imageShowPopup.querySelector('.popup__img');
+export const imageShowCaption = imageShowPopup.querySelector('.popup__caption');
 
 function createCard(data) {
    const card = new Card(data, '#white-template')
