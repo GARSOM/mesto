@@ -1,1 +1,68 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Mesto</title><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head><body class="page"><header class="header"><img src="9acae8482e5b5b17160c.svg" class="header__logo" alt="Логотип"></header><main class="content"><section class="profile"><img src="74c3c0fb802dcfa83abb.jpg" class="profile__avatar" alt="Аватарка"><div class="profile__info"><h1 class="profile__name">Жак-Ив Кусто</h1><button type="button" class="profile__button"></button><p class="profile__nickname">Исследователь океана</p></div><button type="button" class="profile__add"></button></section><section class="photo"><ul class="photo__elements"></ul></section></main><footer class="footer"><p class="footer__paragraph">© 2020 Mesto Russia</p></footer><div class="popup popup_profile"><div class="popup__container"><button type="button" class="popup__close popup__close_profile"></button><form name="formpopup" class="popup__form popup__form_profile" novalidate><h3 class="popup__text">Редактировать профиль</h3><input id="input-name" name="input-name" required class="popup__input popup__input-name" minlength="2" maxlength="40"/> <span class="popup__input-error" id="error-input-name"></span> <input name="input-job" id="input-job" class="popup__input popup__input-job" required minlength="2" maxlength="200"/> <span class="popup__input-error" id="error-input-job"></span> <button type="submit" class="popup__submit">Сохранить</button></form></div></div><div class="popup popup_add-place"><div class="popup__container popup__container-add-place"><button type="button" class="popup__close popup__close-add-place"></button><form name="formpopup-add-place" class="popup__form popup__form_place" novalidate><h3 class="popup__text popup__text-add-place">Новое место</h3><input name="input-name-add-place" placeholder="Название" id="input-text" class="popup__input popup__input_place-name" minlength="2" maxlength="30" required/> <span class="popup__input-error" id="error-input-text"></span> <input name="input-job-add-place" placeholder="Ссылка на картинку" type="url" id="input-link" class="popup__input popup__input_place-link" required/> <span class="popup__input-error" id="error-input-link">Введите адрес сайта.</span> <button type="submit" class="popup__submit popup__submit-add-place">Создать</button></form></div></div><div class="popup popup_type_show-image"><div class="popup__contain-show-image"><button type="button" id="popup__close_show-image" class="popup__close"></button> <img class="popup__img" src="#" alt="#"><p class="popup__caption"></p></div></div><template id="white-template"><li class="photo__white"><button class="photo__basket"></button> <img class="photo__element"><div class="photo__under"><h2 class="photo__text"></h2><button class="photo__like-button"></button></div></li></template></body></html>
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Mesto</title>
+    <script defer="defer" src="main.js"></script>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body class="page">
+    <header class="header"><img src="9acae8482e5b5b17160c.svg" class="header__logo" alt="Логотип"></header>
+    <main class="content">
+        <section class="profile"><img src="74c3c0fb802dcfa83abb.jpg" class="profile__avatar" alt="Аватарка">
+            <div class="profile__info">
+                <h1 class="profile__name">Жак-Ив Кусто</h1><button type="button" class="profile__button"></button>
+                <p class="profile__nickname">Исследователь океана</p>
+            </div><button type="button" class="profile__add"></button>
+        </section>
+        <section class="photo">
+            <ul class="photo__elements"></ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__paragraph">© 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_profile">
+        <div class="popup__container"><button type="button" class="popup__close popup__close_profile"></button>
+            <form name="formpopup" class="popup__form popup__form_profile" novalidate>
+                <h3 class="popup__text">Редактировать профиль</h3><input id="input-name" name="input-name" required
+                    class="popup__input popup__input-name" minlength="2" maxlength="40" /> <span
+                    class="popup__input-error" id="error-input-name"></span> <input name="input-job" id="input-job"
+                    class="popup__input popup__input-job" required minlength="2" maxlength="200" /> <span
+                    class="popup__input-error" id="error-input-job"></span> <button type="submit"
+                    class="popup__submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_add-place">
+        <div class="popup__container popup__container-add-place"><button type="button"
+                class="popup__close popup__close-add-place"></button>
+            <form name="formpopup-add-place" class="popup__form popup__form_place" novalidate>
+                <h3 class="popup__text popup__text-add-place">Новое место</h3><input name="input-name-add-place"
+                    placeholder="Название" id="input-text" class="popup__input popup__input_place-name" minlength="2"
+                    maxlength="30" required /> <span class="popup__input-error" id="error-input-text"></span> <input
+                    name="input-job-add-place" placeholder="Ссылка на картинку" type="url" id="input-link"
+                    class="popup__input popup__input_place-link" required /> <span class="popup__input-error"
+                    id="error-input-link">Введите адрес сайта.</span> <button type="submit"
+                    class="popup__submit popup__submit-add-place">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_show-image">
+        <div class="popup__contain-show-image"><button type="button" id="popup__close_show-image"
+                class="popup__close"></button> <img class="popup__img" src="#" alt="#">
+            <p class="popup__caption"></p>
+        </div>
+    </div><template id="white-template">
+        <li class="photo__white"><button class="photo__basket"></button> <img class="photo__element">
+            <div class="photo__under">
+                <h2 class="photo__text"></h2><button class="photo__like-button"></button>
+            </div>
+        </li>
+    </template>
+</body>
+
+</html>
