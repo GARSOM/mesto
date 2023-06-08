@@ -9,11 +9,11 @@
 
 <body class="page">
     <header class="header">
-        <img src="<%=require('../images/logo.svg')%>" class="header__logo" alt="Логотип">
+        <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="Логотип">
     </header>
     <main class="content">
         <section class="profile">
-            <img src="<%=require('../images/avatar.jpg')%>" class="profile__avatar" alt="Аватарка">
+            <img src="<%=require('./images/avatar.jpg')%>" class="profile__avatar" alt="Аватарка">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <button type="button" class="profile__button">
@@ -37,10 +37,10 @@
             <form name="formpopup" class="popup__form popup__form_profile" novalidate>
                 <h3 class="popup__text">Редактировать профиль</h3>
                 <input id="input-name" type="text" name="input-name" required class="popup__input popup__input-name"
-                    minlength="2" maxlength="40" />
+                    minlength="2" maxlength="40" placeholder="Имя" />
                 <span class="popup__input-error" id="error-input-name"></span>
                 <input name="input-job" type="text" id="input-job" class="popup__input popup__input-job" required
-                    minlength="2" maxlength="200" />
+                    minlength="2" maxlength="200" placeholder="О себе" />
                 <span class="popup__input-error" id="error-input-job"></span>
                 <button type="submit" class="popup__submit">Сохранить</button>
             </form>

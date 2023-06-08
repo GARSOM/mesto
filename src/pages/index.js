@@ -1,11 +1,11 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
-import PicturePopup from "../components/PicturePopup.js";
+import PopupWithImage from "../components/PicturePopup.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import initialCards from "../utils/cards.js";
-import '../pages/index.css'
+import './index.css';
 
 import {
    profileEditButtonOpenPopup, //Кнопка изменить Имя
@@ -21,7 +21,7 @@ import {
    validatorConfig
 } from "../utils/constants.js"
 
-const popupPhotocardImage = new PicturePopup(imageShowPopup);
+const popupPhotocardImage = new PopupWithImage(imageShowPopup);
 
 popupPhotocardImage.setEventListeners();
 
@@ -48,12 +48,11 @@ cardsContainer.renderItems()
 const userInfo = new UserInfo({ name: profileName, description: profileNick });
 
 const popupProfileForm = new PopupWithForm(profileEditPopup, {
-   handleFormSubmit: (input) => {
+   handleFormSubmit: (inputValues) => {
       const data = {
-         name: input['input-name'],
-         description: input['input-job']
+         name: inputValues['input-name'],
+         description: inputValues['input-job']
       }
-      console.log(input)
       userInfo.setUserInfo(data);
    }
 });
@@ -65,18 +64,15 @@ profileEditButtonOpenPopup.addEventListener('click', () => {
    const profileData = userInfo.getUserInfo();
    profileEditNameInput.value = profileData.name;
    profileEditjobInput.value = profileData.description
-   console.log(profileData)
 });
 
 const popupAddImgForm = new PopupWithForm(placeAddPopup, {
-   handleFormSubmit: (input) => {
+   handleFormSubmit: (inputValues) => {
       const data = {
-         name: input['input-name-add-place'],
-         link: input['input-job-add-place']
+         name: inputValues['input-name-add-place'],
+         link: inputValues['input-job-add-place']
       }
-      cardsContainer.newAddItem(createCard(data));
-      console.log(input)
-      console.log(data)
+      cardsContainer.addNewItem(createCard(data));
    }
 });
 popupAddImgForm.setEventListeners()

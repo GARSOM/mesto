@@ -5,8 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: './src/pages/index.js'
   },
+  devtool: 'eval-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -23,11 +24,11 @@ module.exports = {
     rules: [ // rules — это массив правил
       // добавим в него объект правил для бабеля
       {
-        // регулярное выражение, которое ищет все js файлы
+        //   // регулярное выражение, которое ищет все js файлы
         test: /\.js$/,
-        // при обработке этих файлов нужно использовать babel-loader
+        //   // при обработке этих файлов нужно использовать babel-loader
         use: 'babel-loader',
-        // исключает папку node_modules, файлы в ней обрабатывать не нужно
+        //   // исключает папку node_modules, файлы в ней обрабатывать не нужно
         exclude: '/node_modules/'
       },
       // добавили правило для обработки файлов
