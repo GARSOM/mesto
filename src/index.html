@@ -13,7 +13,9 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img src="<%=require('./images/avatar.jpg')%>" class="profile__avatar" alt="Аватарка">
+            <button class="profile__edit-avatar">
+                <img src="#>" class="profile__avatar" alt="Аватарка">
+            </button>
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <button type="button" class="profile__button">
@@ -31,15 +33,36 @@
     <footer class="footer">
         <p class="footer__paragraph">© 2020 Mesto Russia</p>
     </footer>
+    <div class="popup popup_confirmation">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__close_confirmation"></button>
+            <form name="popup-form" class="popup__form">
+                <h3 class="input popup__title_type_confirmation">Вы уверены?</h3>
+                <button type="submit" class="popup__submit popup__submit_type_confirmation">Да</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_avatar">
+        <div class="popup__container">
+            <button type="button" class="popup__close popup__close_avatar"></button>
+            <form name="popupAvatar" class="popup__form popup__form_avatar" novalidate>
+                <h3 class="popup__text popup__title_type_avatar">Обновить аватар</h3>
+                <input id="avatar-url" type="url" required placeholder="Ссылка на изображение" name="avatar"
+                    class="popup__input popup__input_type_edit-avatar-link">
+                <span class="popup__input-error" id="error-avatar-url"></span>
+                <button type="submit" class="popup__submit" disabled>Сохранить</button>
+            </form>
+        </div>
+    </div>
     <div class="popup popup_profile">
         <div class="popup__container">
             <button type="button" class="popup__close popup__close_profile"></button>
             <form name="formpopup" class="popup__form popup__form_profile" novalidate>
                 <h3 class="popup__text">Редактировать профиль</h3>
-                <input id="input-name" type="text" name="input-name" required class="popup__input popup__input-name"
+                <input id="input-name" type="text" name="name" required class="popup__input popup__input-name"
                     minlength="2" maxlength="40" placeholder="Имя" />
                 <span class="popup__input-error" id="error-input-name"></span>
-                <input name="input-job" type="text" id="input-job" class="popup__input popup__input-job" required
+                <input name="about" type="text" id="input-job" class="popup__input popup__input-job" required
                     minlength="2" maxlength="200" placeholder="О себе" />
                 <span class="popup__input-error" id="error-input-job"></span>
                 <button type="submit" class="popup__submit">Сохранить</button>
@@ -52,10 +75,10 @@
             </button>
             <form name="formpopup-add-place" class="popup__form popup__form_place" novalidate>
                 <h3 class="popup__text popup__text-add-place">Новое место</h3>
-                <input name="input-name-add-place" placeholder="Название" type="text" id="input-text"
+                <input name="nameImg" placeholder="Название" type="text" id="input-text"
                     class="popup__input popup__input_place-name" minlength="2" maxlength="30" required />
                 <span class="popup__input-error" id="error-input-text"></span>
-                <input name="input-job-add-place" placeholder="Ссылка на картинку" type="url" id="input-link"
+                <input name="linkImg" placeholder="Ссылка на картинку" type="url" id="input-link"
                     class="popup__input popup__input_place-link" required />
                 <span class="popup__input-error" id="error-input-link">Введите адрес сайта.</span>
                 <button type="submit" class="popup__submit popup__submit-add-place">Создать</button>
@@ -75,7 +98,10 @@
             <img class="photo__element">
             <div class="photo__under">
                 <h2 class="photo__text"></h2>
-                <button class="photo__like-button"></button>
+                <div class="photo__likes-info">
+                    <button class="photo__like-button"></button>
+                    <p class="photo__counter-likes">0</p>
+                </div>
             </div>
         </li>
     </template>
