@@ -12,8 +12,7 @@
   "author": "Garik Kamalyan",
   "license": "ISC",
   "dependencies": {
-    "core-js": "^3.30.2",
-    "jquery": "^3.7.0"
+    "core-js": "^3.30.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",

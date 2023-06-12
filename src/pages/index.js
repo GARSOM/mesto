@@ -160,7 +160,7 @@ const popupAddImgForm = new PopupWithForm(placeAddPopup, {
       loading(popupAddImgForm, 'Сохранение...');
       api.addNewPhotocard(data.nameImg, data.linkImg)
          .then((res) => {
-            cardsContainer.newAddItem(createCard(res));
+            cardsContainer.addNewItem(createCard(res));
             popupAddImgForm.close();
          })
          .catch((err) => {

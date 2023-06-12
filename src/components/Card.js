@@ -56,7 +56,7 @@ export default class Card {
     }
     _checkLikedState() {
         this._data.likes.forEach((like) => {
-            if (like._Id === this._userId) {
+            if (like._id === this._userId) {
                 this._buttonLike.classList.add('photo__like-active')
             }
         })
